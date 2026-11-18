@@ -1,0 +1,29 @@
+
+name: My First GitHub Action
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  first-job:
+    name: First Automation Job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Welcome Message
+        run: echo "Welcome to GitHub Actions!"
+
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+
+      - name: Display Repository Files
+        run: ls -la
+
+      - name: Execution Successful
+        run: echo "GitHub Action executed successfully!"
